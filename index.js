@@ -1,22 +1,48 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] + array[j] === target) 
+      return true;
+    } 
+  } return false 
 }
 
 /* 
-  Write the Big O time complexity of your function here
+  0(n^2)
 */
 
 /* 
-  Add your pseudocode here
+  function hasTargetSum (array, targetNumber)
+  for (let item equal 0; item is less than the length of the array
+    plus one)
+  for (let secondItem equal item plus one; secondItem is less than
+    the length of the array plus one)
+  if item plus secondItem strongly equal the targetNumber
+  return true
+  else return false
+
+  hasTargetSum()
 */
 
 /*
-  Add written explanation of your solution here
+  write a function that adds any two numbers together
+  in an array that will add up to a specific target number
+  return true if any pair of numbers add up to the target number
 */
 
 // You can run `node index.js` to view these console logs
 if (require.main === module) {
-  // add your own custom tests in here
+  /* target = 10
+     array = [1, 2, 3, 5, 5]
+     5+5 = 10
+     return true
+
+     target = 11
+     array = [1, 2, 3, 5, 4]
+     no pairs that = 11
+     return false
+  */
+  
   console.log("Expecting: true");
   console.log("=>", hasTargetSum([3, 8, 12, 4, 11, 7], 10));
 
